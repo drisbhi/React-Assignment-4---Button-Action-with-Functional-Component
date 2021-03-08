@@ -2,23 +2,23 @@ import React, {Component, useState} from "react";
 import "./../styles/App.css";
 
 function App() {
-  const [isClicked,setClick]=useState(false);
-  const handleClick=()=>{
-    setClick({isClicked:true})
-  }
-  const addPara=()=>{
-    if(isClicked){
-      return <p>Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>
-    }
-  }
+
+  const [para, setPara] = useState(" ");
+
+  const handleClick = () =>{
+    setPara(
+      <p>Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>
+    );
+  };
+
+  
   return (
     <div id="main">
-      
-      <button id="click" onClick={handleClick}>click me</button>
-      {/* {addPara()} */}
-      {isClicked && <p>Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>}
+      <p id="para">{para}</p>
+      <button id="click" onClick={handleClick}>Click</button>
     </div>
   );
+  
 }
 
 
